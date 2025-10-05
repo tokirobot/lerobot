@@ -92,6 +92,8 @@ from lerobot.utils.robot_utils import busy_wait
 from lerobot.utils.utils import init_logging, move_cursor_up
 from lerobot.utils.visualization_utils import init_rerun, log_rerun_data
 
+from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
+from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
 
 @dataclass
 class TeleoperateConfig:

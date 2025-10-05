@@ -1,0 +1,39 @@
+robot:
+  type: openarm_follower
+  can_port: can2
+  id: "0xA1B2"
+  send_ids: [1, 2, 3, 4, 5, 6, 7]
+  recv_ids: [17, 18, 19, 20, 21, 22, 23]
+  motor_types: ["DM8009","DM8009","DM4340","DM4340","DM4310","DM4310","DM4310"]
+  joint_names: ["j1","j2","j3","j4","j5","j6","j7"]
+  pd_gains:
+    kp: [45,45,45,45,15,15,15,15]
+    kd: [1.0,1.5,1.5,1.5,0.9,0.9,0.9,0.5]
+  gripper_name: gripper
+  gripper_motor_type: DM4310
+  gripper_send_id: 8
+  gripper_recv_id: 24
+  cameras:
+    wrist:
+      type: intelrealsense
+      serial_number_or_name: "218622276565"
+      fps: 30
+      width: 640
+      height: 480
+      use_depth: false
+      color_mode: RGB
+      rotation: NO_ROTATION
+      warmup_s: 2
+
+teleop:
+  type: openarm_leader
+  can_port: can0
+  id: "0xBEEF"
+  send_ids: [1, 2, 3, 4, 5, 6, 7]
+  recv_ids: [17, 18, 19, 20, 21, 22, 23]
+  motor_types: ["DM8009","DM8009","DM4340","DM4340","DM4310","DM4310","DM4310"]
+  joint_names: ["j1","j2","j3","j4","j5","j6","j7"]
+  gripper_name: gripper
+  gripper_motor_type: DM4310
+  gripper_send_id: 8
+  gripper_recv_id: 24

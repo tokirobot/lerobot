@@ -99,8 +99,8 @@ class SO100Follower(Robot):
 
         for cam in self.cameras.values():
             cam.connect()
-
-        self.configure()
+        # does'nt work now
+        # self.configure()
         logger.info(f"{self} connected.")
 
     @property

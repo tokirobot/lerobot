@@ -67,6 +67,8 @@ from lerobot.utils.utils import (
     log_say,
 )
 
+from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
+from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
 
 @dataclass
 class DatasetReplayConfig:
