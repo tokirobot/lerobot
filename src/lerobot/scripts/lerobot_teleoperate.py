@@ -76,6 +76,8 @@ from lerobot.robots import (  # noqa: F401
     make_robot_from_config,
     so100_follower,
     so101_follower,
+    openarm,
+    openarm_bimanual
 )
 from lerobot.teleoperators import (  # noqa: F401
     Teleoperator,
@@ -87,13 +89,23 @@ from lerobot.teleoperators import (  # noqa: F401
     make_teleoperator_from_config,
     so100_leader,
     so101_leader,
+    openarm,
+    openarm_bimanual
+
 )
+
+
 from lerobot.utils.robot_utils import busy_wait
 from lerobot.utils.utils import init_logging, move_cursor_up
 from lerobot.utils.visualization_utils import init_rerun, log_rerun_data
 
-from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
-from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
+
+# TODO we shoul avoid write import directoly
+# from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
+# from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
+
+# from lerobot.robots.openarm_bimanual.config_openarm_bimanual_follower  import OpenArmFollowerBimanualConfig  # noqa: F401
+# from lerobot.teleoperators.openarm_bimanual.config_openarm_bimanual_leader import OpenArmLeaderBimanualConfig
 
 @dataclass
 class TeleoperateConfig:

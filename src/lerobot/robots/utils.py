@@ -70,6 +70,11 @@ def make_robot_from_config(config: RobotConfig) -> Robot:
         from .openarm.openarm_follower import OpenArmFollower
 
         return OpenArmFollower(config)
+    elif config.type == "openarm_follower_bimanual":
+        from .openarm_bimanual.openarm_bimanual_follower import OpenArmFollowerBimanual
+
+        return OpenArmFollowerBimanual(config)
+
     else:
         raise ValueError(config.type)
 
@@ -169,6 +174,11 @@ def make_robot_from_config(config: RobotConfig) -> Robot:
         from .openarm.openarm_follower import OpenArmFollower
 
         return OpenArmFollower(config)
+
+    elif config.type == "openarm_follower_bimanual":
+        from .openarm_bimanual.openarm_bimanual_follower import OpenArmFollowerBimanual
+
+        return OpenArmFollowerBimanual(config)
 
     else:
         raise ValueError(config.type)

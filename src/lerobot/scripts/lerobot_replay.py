@@ -59,6 +59,8 @@ from lerobot.robots import (  # noqa: F401
     make_robot_from_config,
     so100_follower,
     so101_follower,
+    openarm,
+    openarm_bimanual
 )
 from lerobot.utils.constants import ACTION
 from lerobot.utils.robot_utils import busy_wait
@@ -67,8 +69,8 @@ from lerobot.utils.utils import (
     log_say,
 )
 
-from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
-from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
+# from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
+# from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
 
 @dataclass
 class DatasetReplayConfig:

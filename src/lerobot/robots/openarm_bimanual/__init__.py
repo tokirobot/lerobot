@@ -1,0 +1,2 @@
+from .openarm_bimanual_follower import OpenArmFollowerBimanual
+from .config_openarm_bimanual_follower import OpenArmFollowerBimanualConfig

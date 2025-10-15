@@ -1,0 +1,38 @@
+robot:
+  type: openarm_follower_bimanual
+
+  right_can_port: can2
+  left_can_port:  can3
+
+  pd_gains:
+    kp: [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+    kd: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
+
+  # cameras:
+  #   right_wrist:
+  #     type: intelrealsense
+  #     serial_number_or_name: "XXXXXXXXXXXX"
+  #     fps: 30
+  #     width: 640
+  #     height: 480
+  #     use_depth: false
+  #     color_mode: RGB
+  #     rotation: NO_ROTATION
+  #     warmup_s: 2
+
+  #   left_wrist:
+  #     type: intelrealsense
+  #     serial_number_or_name: "218622276565"
+  #     fps: 30
+  #     width: 640
+  #     height: 480
+  #     use_depth: false
+  #     color_mode: RGB
+  #     rotation: NO_ROTATION
+  #     warmup_s: 2
+
+teleop:
+  type: openarm_leader_bimanual
+
+  right_can_port: can0
+  left_can_port:  can1

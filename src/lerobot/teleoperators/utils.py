@@ -84,7 +84,13 @@ def make_teleoperator_from_config(config: TeleoperatorConfig) -> Teleoperator:
 
     elif config.type == "openarm_leader":
         from .openarm.openarm_leader import OpenArmLeader
+
         return OpenArmLeader(config)
+
+    elif config.type == "openarm_leader_bimanual":
+        from .openarm_bimanual.openarm_bimanual_leader import OpenArmLeaderBimanual
+
+        return OpenArmLeaderBimanual(config)
 
     else:
         raise ValueError(config.type)

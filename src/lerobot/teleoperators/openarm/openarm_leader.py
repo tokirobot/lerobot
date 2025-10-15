@@ -60,6 +60,7 @@ class OpenArmLeader(Teleoperator):
         if self.is_connected:
             raise RuntimeError(f"{self} already connected")
 
+        # canport , use_canfd ??
         self._arm = oa.OpenArm(self.config.can_port, True)
 
         # arm
@@ -72,10 +73,10 @@ class OpenArmLeader(Teleoperator):
 
         self._arm.set_callback_mode_all(oa.CallbackMode.STATE)
         self._arm.enable_all()
-        time.sleep(0.1)
+        time.sleep(0.2)
         self._arm.recv_all()
 
-        self.configure()
+        # self.configure()
 
         logger.info("OpenArmLeader connected")
 
@@ -89,29 +90,6 @@ class OpenArmLeader(Teleoperator):
         self._arm = None
         logger.info("OpenArmLeader disconnected")
 
-    # def get_action(self) -> Dict[str, float]:
-    #     if not self.is_connected:
-    #         raise RuntimeError("OpenArmLeader not connected")
-
-    #     self._arm.refresh_all()
-    #     self._arm.recv_all(220)
-
-    #     out: Dict[str, float] = {}
-
-    #     # --- arm joints ---
-    #     ms_arm = self._arm.get_arm().get_motors()
-    #     if len(ms_arm) != len(self.config.joint_names):
-    #         raise RuntimeError(f"arm joints mismatch: hw={len(ms_arm)} cfg={len(self.config.joint_names)}")
-    #     for name, m in zip(self.config.joint_names, ms_arm):
-    #         out[f"{name}.pos"] = float(m.get_position())
-
-    #     # --- gripper ---
-    #     ms_grp = self._arm.get_gripper().get_motors()
-    #     if not ms_grp:
-    #         raise RuntimeError("gripper motor not initialized")
-    #     out[f"{self.config.gripper_name}.pos"] = float(ms_grp[0].get_position())
-
-    #     return out
     def get_action(self) -> Dict[str, float]:
         if not self.is_connected:
             raise RuntimeError("OpenArmLeader not connected")

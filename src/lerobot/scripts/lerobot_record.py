@@ -97,6 +97,8 @@ from lerobot.robots import (  # noqa: F401
     make_robot_from_config,
     so100_follower,
     so101_follower,
+    openarm,
+    openarm_bimanual,
 )
 from lerobot.teleoperators import (  # noqa: F401
     Teleoperator,
@@ -107,6 +109,8 @@ from lerobot.teleoperators import (  # noqa: F401
     make_teleoperator_from_config,
     so100_leader,
     so101_leader,
+    openarm,
+    openarm_bimanual,
 )
 from lerobot.teleoperators.keyboard.teleop_keyboard import KeyboardTeleop
 from lerobot.utils.constants import ACTION, OBS_STR
@@ -125,8 +129,8 @@ from lerobot.utils.utils import (
 )
 from lerobot.utils.visualization_utils import init_rerun, log_rerun_data
 
-from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
-from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
+# from lerobot.robots.openarm.config_openarm_follower import OpenArmFollowerConfig  # noqa: F401
+# from lerobot.teleoperators.openarm.config_openarm_leader import OpenArmLeaderConfig  # noqa: F401
 
 @dataclass
 class DatasetRecordConfig:
